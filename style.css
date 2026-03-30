@@ -167,8 +167,12 @@ button { font-family: inherit; }
 .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201, 168, 76, 0.3); }
 
 /* Mobile Menu */
-.hamburger { display: none; background: none; border: none; cursor: pointer; padding: 10px; }
-.hamburger span { display: block; width: 25px; height: 2px; background: var(--white); margin: 5px 0; transition: var(--transition); }
+.hamburger { display: none; background: none; border: none; cursor: pointer; padding: 10px; z-index: 1100; }
+.hamburger span { display: block; width: 25px; height: 2px; background: var(--white); margin: 5px 0; transition: var(--transition); transform-origin: center; }
+
+.hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 /* Theme Toggle */
 .nav-actions { display: flex; align-items: center; gap: 15px; }
